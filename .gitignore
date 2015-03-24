@@ -1,3 +1,7 @@
+## Ignore certain IDE files
+/.idea/workspace.xml
+/.idea/uiDesigner.xml
+
 *.gem
 *.rbc
 /.config
