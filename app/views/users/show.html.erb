@@ -1,0 +1,11 @@
+<h1>Profile</h1>
+
+<p>
+    Welcome, <strong><%= @user.username %>!</strong>
+</p>
+<p>
+    You have been a member since: <%= @user.created_at %>
+</p>
+<p>
+    <%= link_to 'Logout', logout_path, method: :delete %>
+</p>
