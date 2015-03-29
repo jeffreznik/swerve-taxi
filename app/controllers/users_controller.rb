@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   def show
     protected_action
 
-    if params[:user_id]
-      @user = User.find_by(id: params[:user_id])
+    if params[:id]
+      @user = User.find(params[:id])
     else
       @user = current_user
     end

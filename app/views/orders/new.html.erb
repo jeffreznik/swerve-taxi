@@ -1,0 +1,11 @@
+<h1>Book a Taxi</h1>
+
+<%= form_for @order do |f| %>
+    <p>
+        <%= f.label :address %><br>
+        <%= f.text_field :address %>
+    </p>
+    <p>
+        <%= f.submit 'Confirm Booking' %>
+    </p>
+<% end %>
