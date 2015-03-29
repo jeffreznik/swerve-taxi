@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def edit
+    @order = Order.find(params[:id])
+  end
+
   def create
     protected_action
 
@@ -14,7 +18,22 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to profile_path
     else
+      flash[:danger] = 'Unable to create order'
       render 'new'
+    end
+  end
+
+  def update
+    protected_action
+
+    @order = Order.find(params[:id])
+    @order.address = params[:order][:address]
+
+    if @order.save
+      redirect_to profile_path
+    else
+      flash[:warning] = 'Unable to save order'
+      render 'edit'
     end
   end
 

@@ -8,6 +8,7 @@
     <% @user.orders.each do |order| %>
         <p>
             Order ID: <%= order.id %>, Address: <%= order.address %>
+            <%= link_to 'Edit', [:edit, order] %>
             <%= link_to 'Cancel',
                         order,
                         method: :delete,
